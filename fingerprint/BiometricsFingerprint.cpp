@@ -105,15 +105,6 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, floa
 Return<void> BiometricsFingerprint::onFingerUp() {
     this->isCancelled = 0;
     mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
-    return Void();
-}
-
-Return<void> BiometricsFingerprint::onShowUdfpsOverlay() {
-    return Void();
-}
-
-Return<void> BiometricsFingerprint::onHideUdfpsOverlay() {
-    this->isCancelled = 0;
     mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     return Void();
 }
